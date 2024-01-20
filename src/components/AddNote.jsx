@@ -8,6 +8,7 @@ const AddNote = ({ getNotes, notes }) => {
     e.preventDefault();
     if (note.trim().length === 0) {
       alert("Please write something!");
+      setNote("");
       return;
     }
     try {
