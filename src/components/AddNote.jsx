@@ -6,7 +6,7 @@ const AddNote = ({ getNotes, notes }) => {
 
   const addNote = async (e) => {
     e.preventDefault();
-    if (note === "") {
+    if (note.trim().length === 0) {
       alert("Please write something!");
       return;
     }
