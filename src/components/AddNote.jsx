@@ -6,6 +6,10 @@ const AddNote = ({ getNotes, notes }) => {
 
   const addNote = async (e) => {
     e.preventDefault();
+    if (note === "") {
+      alert("Please write something!");
+      return;
+    }
     try {
       await fetch(
         "https://first-project-e1dd6-default-rtdb.firebaseio.com/notes.json",
@@ -36,7 +40,9 @@ const AddNote = ({ getNotes, notes }) => {
           type="text"
           placeholder="add note here"
           value={note}
-          onChange={(e) => setNote(e.target.value)}
+          onChange={(e) => {
+            setNote(e.target.value);
+          }}
         />
 
         <button

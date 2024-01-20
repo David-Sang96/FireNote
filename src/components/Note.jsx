@@ -3,7 +3,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import Intro from "./Intro";
 
 const Note = ({ notes, getNotes }) => {
-  console.log(notes.length);
   const handleDelete = async (id) => {
     try {
       const res = await fetch(

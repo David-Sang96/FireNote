@@ -36,7 +36,6 @@ function App() {
     setLoading(false);
   };
 
-  console.log(notes);
   if (error) {
     return <p className="md:w-1/3 mx-auto mt-10 text-3xl">{error}</p>;
   } else {
@@ -45,9 +44,9 @@ function App() {
         <NavBar getNotes={getNotes} setActive={setActive} active={active} />
         <AddNote getNotes={getNotes} notes={notes} />
         {isLoading ? (
-          <p className="md:w-1/3 mx-auto mt-10 text-3xl">
+          <div className="md:w-1/3 mx-auto mt-10 text-3xl">
             <Loader />
-          </p>
+          </div>
         ) : (
           <>{active && <Note notes={notes} getNotes={getNotes} />}</>
         )}
